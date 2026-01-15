@@ -1,0 +1,211 @@
+
+        :root {
+            --primary-color: #0067fc; 
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --glass-bg: rgba(255, 255, 255, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --shadow: 0 10px 30px -5px rgba(0, 103, 252, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden; 
+            
+            background: linear-gradient(135deg, #f0f4ff 0%, #dbeafe 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: var(--text-dark);
+            position: relative;
+            width: 100%;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 50vw;
+            height: 50vw;
+            background: rgba(0, 103, 252, 0.1);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: -1;
+        }
+        
+        header {
+            padding: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .logo-img {
+            height: 110px; /* PC Logo Height */
+            width: auto;  /* Maintain Aspect Ratio */
+            display: block;
+            object-fit: contain;
+            margin: 0 auto; /* Itha add panna Logo Center la vanthurum */
+        }
+
+        
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 15px;
+            text-align: center;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        
+        .countdown {
+            display: flex;
+            flex-wrap: nowrap; 
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .time-box {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            border-radius: 18px;
+            
+            
+            flex: 1; 
+            min-width: 0; 
+            
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1.1;
+        }
+
+        .time-box small {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--text-light);
+            font-weight: 600;
+            margin-top: 5px;
+            display: block;
+            letter-spacing: 1px;
+        }
+
+        
+        footer {
+            padding: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        footer p {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #fff;
+            color: var(--text-dark);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        /* =========================================
+           MOBILE PERFECT FIT (Single Row, No Scroll)
+           ========================================= */
+        @media (max-width: 768px) {
+            
+            /* Adjust Logo size */
+            .logo-img { height: 60px; }
+
+            /* Adjust Text size to fit vertically without scroll */
+            h1 { font-size: 1.8rem; margin-bottom: 5px; }
+            p.subtitle { font-size: 0.85rem; margin-bottom: 25px; }
+
+            /* COUNTDOWN FIXES */
+            .countdown {
+                gap: 8px; /* Reduce gap significantly */
+            }
+
+            .time-box {
+                padding: 10px 2px; /* Very tight padding inside boxes */
+                border-radius: 12px;
+            }
+
+            .time-box span {
+                font-size: 1.6rem; /* Smaller numbers */
+            }
+
+            .time-box small {
+                font-size: 0.6rem; /* Tiny label text */
+                letter-spacing: 0; /* Remove letter spacing to save space */
+                margin-top: 2px;
+            }
+            
+            /* Footer adjustments */
+            footer { padding: 15px; }
+            footer p { font-size: 0.8rem; margin-bottom: 10px; }
+        }
+        
+        /* Extra Small Mobile (e.g. iPhone SE) */
+        @media (max-width: 380px) {
+            h1 { font-size: 1.5rem; }
+            .time-box span { font-size: 1.3rem; }
+            .time-box small { font-size: 0.5rem; }
+        }
+    
