@@ -1,5 +1,5 @@
 
-        const launchDate = new Date("Jan 18, 2026 00:00:00").getTime();
+        const launchDate = new Date("Jan 19, 2026 00:00:00").getTime();
 
         const countdownFunction = setInterval(() => {
             const now = new Date().getTime();
@@ -20,4 +20,5 @@
                 document.querySelector(".countdown").innerHTML = "<h2>We are Live!</h2>";
             }
         }, 1000);
+
   
